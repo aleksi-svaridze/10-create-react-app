@@ -1,10 +1,29 @@
 import "./App.css";
 import tree from "./assets/tree.JPG";
-import Bruno from "./assets/bruno.png";
-import Annie from "./assets/annie.png";
-import Aleksi from "./assets/aleksi.png";
+// import Bruno from "./assets/bruno.png";
+// import Annie from "./assets/annie.png";
+// import Aleksi from "./assets/aleksi.png";
+import { PortfolioCard } from "./Components/portfolio/PortfolioCard";
+import { useState } from "react";
 
 function App() {
+  const [cards] = useState([
+    {
+      id: 1,
+      imgUrl: "/bruno.png",
+      linkUrl: "https://bruno-simon.com/",
+    },
+    {
+      id: 2,
+      imgUrl: "/annie.png",
+      linkUrl: "https://blog.anniebombanie.com/",
+    },
+    {
+      id: 3,
+      imgUrl: "/aleksi.png",
+      linkUrl: "https://aleksisportfolio.netlify.app/",
+    },
+  ]);
   return (
     <div className="container">
       <header className="profile">
@@ -25,30 +44,9 @@ function App() {
           course:
         </p>
         <div className="portfolio__cards-wrapper">
-          <div
-            className="portfolio__card"
-            style={{ backgroundImage: `url(${Bruno})` }}
-          >
-            <a href="https://bruno-simon.com/" target="_blank">
-              Visit
-            </a>
-          </div>
-          <div
-            className="portfolio__card"
-            style={{ backgroundImage: `url(${Annie})` }}
-          >
-            <a href="https://blog.anniebombanie.com/" target="_blank">
-              Visit
-            </a>
-          </div>
-          <div
-            className="portfolio__card"
-            style={{ backgroundImage: `url(${Aleksi})` }}
-          >
-            <a href="https://aleksisportfolio.netlify.app/" target="_blank">
-              Visit
-            </a>
-          </div>
+          {cards.map((card) => (
+            <PortfolioCard card={card} key={card.id} />
+          ))}
         </div>
       </section>
     </div>
