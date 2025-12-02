@@ -1,3 +1,3 @@
-# To view template, visit - **[portfolio - template](https://papaya-hotteok-870689.netlify.app/)**
+# To view template, visit - _[portfolio - template](https://papaya-hotteok-870689.netlify.app/)_
 
-## Template is created by **npm create vite@latest** package
+## Template is created by _npm create vite@latest_ package
